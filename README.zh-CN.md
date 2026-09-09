@@ -1,4 +1,5 @@
 # 力扣终端中文版
+> 本项目基于 [Akarsh Jain（akarsh1995）](https://github.com/akarsh1995) 的 [leetcode-tui](https://github.com/akarsh1995/leetcode-tui) 修改，原项目采用 MIT 许可证。本仓库由 koyama-kagami 维护中文适配，重点支持力扣中国站、Hot 100 和面试经典 150。原作者版权声明保留于 [LICENSE](LICENSE)。
 
 在终端中浏览中文题目、编写 Python 3 等语言的解答，并在力扣运行或提交。
 
@@ -6,7 +7,7 @@
 
 ## 启动
 
-Windows 已编译版本：双击 `启动中文版.cmd`。按 `e` 选择 `python3` 后即可编写 Python 解答。
+Windows 使用已编译版本时，将 `leetui.exe` 与 `启动中文版.cmd` 放在同一目录，然后双击启动脚本。仓库不包含预编译程序，请先从源码编译。按 `e` 选择 `python3` 后即可编写 Python 解答。
 
 编译：`cargo build --release`。Windows 运行 `target\release\leetui.exe`。
 
