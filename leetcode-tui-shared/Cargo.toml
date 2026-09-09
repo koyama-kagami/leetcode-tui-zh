@@ -1,0 +1,17 @@
+[package]
+name = "leetcode-tui-shared"
+description = "Leetcode tui shared library"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+keywords.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+color-eyre = { workspace = true }
+signal-hook = "0.3.17"

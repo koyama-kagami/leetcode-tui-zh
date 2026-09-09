@@ -1,0 +1,32 @@
+[package]
+name = "leetcode-tui-rs"
+description = "Leetcode terminal UI. Helps you browse leetcode stats and manage your leetcode from terminal."
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+keywords.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[[bin]]
+name = "leetui"
+path = "src/main.rs"
+
+[dependencies]
+shlex = "1.3"
+leetcode-core = { path = "../leetcode-core", version = '0.5.2' }
+leetcode-tui-db = { path = "../leetcode-tui-db", version = '0.5.2' }
+kdam = { version = "0.4.1" }
+
+leetcode-tui-config = { path = "../leetcode-tui-config", version = '0.5.2' }
+leetcode-tui-core = { path = "../leetcode-tui-core", version = '0.5.2' }
+leetcode-tui-shared = { path = "../leetcode-tui-shared", version = '0.5.2' }
+
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+color-eyre = { workspace = true }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+futures = "0.3.28"
+tui-markdown = "0.3.1"

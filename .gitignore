@@ -1,0 +1,22 @@
+/target
+.env
+leetcode.sqlite
+config.toml
+src/.vscode
+temp/
+gif_demo
+.ssh/vhs_ed25519
+.ssh/vhs_ed25519.pub
+leetcode.db
+leetui
+config.toml
+wip
+result
+
+# Local executables and runtime data
+/leetui.exe
+*.db
+*.db-shm
+*.db-wal
+.env.*
+

@@ -1,0 +1,56 @@
+use super::GQLLeetcodeRequest;
+use serde::Serialize;
+
+const QUERY_CN: &str = "query questionEditorData($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId titleSlug questionFrontendId content translatedContent codeSnippets { lang langSlug code } envInfo enableRunCode } }";
+
+const QUERY: &str = r#"
+query questionEditorData($titleSlug: String!) {
+  question(titleSlug: $titleSlug) {
+    questionId
+    titleSlug
+    questionFrontendId
+    content
+    codeSnippets {
+      lang
+      langSlug
+      code
+    }
+    envInfo
+    enableRunCode
+  }
+}
+"#;
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+struct Variables {
+    title_slug: String,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Query {
+    query: &'static str,
+    variables: Variables,
+}
+
+impl Query {
+    pub fn new(title_slug: String) -> Self {
+        Self {
+            query: if crate::site::current() == crate::Site::Cn {
+                QUERY_CN
+            } else {
+                QUERY
+            },
+            variables: Variables { title_slug },
+        }
+    }
+}
+
+impl GQLLeetcodeRequest for Query {
+    type T = crate::types::editor_data::QuestionData;
+
+    fn use_cache(&self) -> bool {
+        true
+    }
+}
